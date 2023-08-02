@@ -14,17 +14,14 @@ const CarSchema = new mongoose.Schema({
 router.get('/', async function(req, res, next) {
   const  Car = mongoose.model('Car', CarSchema, 'Car');
   const  data = await Car.find({});
-  res.render('index', { title: 'Express' ,data:data});
+  res.json(data)
+  // res.render('index', { title: 'Express' ,data:data});
 });
 //
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-<<<<<<< HEAD
-    cb(null, '../uploads');
-=======
     cb(null, './uploads');
->>>>>>> 09f5692 (Initial commit)
   },
   filename: function(req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now());
