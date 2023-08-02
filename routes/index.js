@@ -14,8 +14,8 @@ const CarSchema = new mongoose.Schema({
 router.get('/', async function(req, res, next) {
   const  Car = mongoose.model('Car', CarSchema, 'Car');
   const  data = await Car.find({});
-  // res.json(data)
-  res.render('index', { title: 'Express' ,data:data});
+  res.json(data)
+  // res.render('index', { title: 'Express' ,data:data});
 });
 //
 
