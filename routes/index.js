@@ -20,7 +20,11 @@ router.get('/', async function(req, res, next) {
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
+<<<<<<< HEAD
     cb(null, '../uploads');
+=======
+    cb(null, './uploads');
+>>>>>>> 09f5692 (Initial commit)
   },
   filename: function(req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now());
